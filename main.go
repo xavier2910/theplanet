@@ -26,11 +26,11 @@ Version: as yet unpublished.
 	fmt.Scanln()
 
 	fmt.Printf(`
- As it turns out, some important people in charge of the planetatry defense of the earth got
+ As it turns out, some important people in charge of the planetary defense of the earth got
 wind of your exploits in deep space. It turns out that these yellow furry aliens are rather a
 menace to society and need to be eliminated. As the only one to have encountered them and
 come back alive, you were considered an expert in the field and promptly dispatched to the
-purple whale planet, which your teleportation from was tracked. Thus,
+purple whale planet, which your teleportation from was tracked to. Thus,
 `)
 
 	start()
@@ -149,7 +149,7 @@ func outsidePod() {
 	fmt.Printf(`
  You are standing just outside your space pod, in the midst of a barren purple plain. Bluegrass shivers
 in the wind, which is apparently breathable, since you aren't dead. Off to your left are some hills; dead
-ahead, some large beasts are grazing, green in color; apparently they have no need for camoflage.
+ahead, some large beasts are grazing, green in color; apparently they have no need for camouflage.
 `)
 	dispatch(
 		p{"Return to pod", start},
@@ -185,8 +185,8 @@ hard to make out just how big it is.
 func beasts() {
 	fmt.Printf(`
  As you approach the beasts, some of the aliens, wearing blue all over, and riding some kind of
-large blue fish, come galloping in, shoot one of the beasts, causing the rest to stampede.
-Fortunately away from you. Unfortunately, they quickly spot you in your orange flight suit. One
+large blue fish, come galloping in and shoot one of the beasts, causing the rest to stampede.
+Fortunately, away from you. Unfortunately, they quickly spot you in your orange flight suit. One
 of them points his weapon at you.
 `)
 	dispatch(
@@ -518,7 +518,7 @@ func getSentHome() {
  "Ah, More's The Pity. Oh Well."
 
  The wall shuts and you are led to your waiting spacecraft, which takes you home to earth. You give
-your report, but not being a close acquaintaince of the Powers That Be in that part of the universe,
+your report, but not being a close acquaintance of the Powers That Be in that part of the universe,
 you return to your normal life.
 
 	The end.
@@ -540,7 +540,7 @@ you.
 func inDesert() {
 	fmt.Printf(`
  You are standing in the middle of a great, open expanse of pale purple desert. Around you rocks and
-a bluish cactus adorn the barren sands. The hot wind stirrs the sand up into the cloudless sky, in which
+a bluish cactus adorn the barren sands. The hot wind stirs the sand up into the cloudless sky, in which
 a whale flies by, singing its lonesome song, oblivious of all on the surface.
 `)
 	dispatch(
@@ -684,8 +684,8 @@ members of its commonwealth. If you are friendly, we are willing to let you shar
 
 func reversed() {
 	fmt.Printf(`
- "Ach! You've had a run in with those villians!? We hate them totally! We are dedicated to their
-destruction! But intelligence never can find out where we ought to strike with our severly limited
+ "Ach! You've had a run in with those villains!? We hate them totally! We are dedicated to their
+destruction! But intelligence never can find out where we ought to strike with our severely limited
 firepower. If you've had a run in with them, do you have any information on them we could use?"
 `)
 	dispatch(
@@ -749,10 +749,11 @@ space travel, you finally arrive at Glock. You are brought to the bridge to guid
 spaceship bombards the central government of all Gorbluks. His Mighty Majesty, The Lord High Dictator
 Of All Gorbluks dies. All Gorbluk activities come to a halt. The Earth is freed. The Kulbrogs invade
 and lay waste to Glock. Through your artifice, a treaty is signed between the Earth and the
-Commonweath of Kcolg. You return to Earth, a hero. Eventually, the Earth becomes a satellite state
+Commonwealth of Kcolg. You return to Earth, a hero. Eventually, the Earth becomes a satellite state
 of the Kulbrogs. But their government isn't so bad, so long as nobody tells anyone anything they
 shouldn't.
 
 	The end.
 `)
+	playAgainPrompt()
 }
