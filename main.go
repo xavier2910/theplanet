@@ -136,7 +136,8 @@ func getCourtMartialed() {
 
 	fmt.Printf(`
  You return to earth, but the powers that be are not happy with having spent billions of dollars to
-send you to space only to have you return, having done nothing. You are executed.
+send you to space only to have you return, having done nothing. You are executed. You
+die.
 
 	The end.
 `)
@@ -627,4 +628,131 @@ projected through space.
 	}
 }
 
-func yellowPlanet() {}
+func yellowPlanet() {
+	fmt.Printf(`
+ You are standing in the midst of a great expanse of greenish-yellow. Bright yellow-orange grasses 
+blow in the wind, which is also apparently breathable, though it tastes funny. Small pink animals
+scurry through the underbrush. Blue-scaled aliens in yellow garb mounted on what look like miniature
+gold-colored ostriches plunge through the grass, chasing the pink rodents, catching them on long
+spears. On the horizon a huge battle-equipped spacecraft hovers amid the haze, painted a brilliant
+cyan. The aliens to not appear to have noticed you.
+`)
+	dispatch(
+		p{"Hail the aliens", hailKulbrogs},
+		p{"Hide", hideFromKulbrogs},
+		p{"Shoot the aliens", shootKulbrogs},
+	)
+}
+
+func shootKulbrogs() {
+	fmt.Printf(`
+ You fire but miss. Alert, the aliens shoot you. You
+die.
+
+	The end.
+`)
+	playAgainPrompt()
+}
+
+func hideFromKulbrogs() {
+	fmt.Printf(`
+ You successfully hide from them continuously, but one of the pink rodents bites you and you catch a
+fatal case of space rabies. Despite the best efforts of alien doctors, you
+die.
+
+	The end.
+`)
+	playAgainPrompt()
+}
+
+func hailKulbrogs() {
+	fmt.Printf(`
+ They ride over to you and dismount their strange steeds. One says to you,
+
+ "Well met, extraplanetary stranger! We are Kulbrogs, inhabitants of this great planet Kcolg, and
+members of its commonwealth. If you are friendly, we are willing to let you share our commonweal."
+
+ You notice that, while all of them have spears, only one has a gun.
+`)
+
+	dispatch(
+		p{"Yell, \"I reject your commonwealth!\" and shoot them.", shootKulbrogs},
+		p{"\"I accept your offer as a representative of the planet Earth.\"", diplo},
+		p{"\"What's with the names? They're just reversed of the Gorbluks'!\"", reversed},
+	)
+}
+
+func reversed() {
+	fmt.Printf(`
+ "Ach! You've had a run in with those villians!? We hate them totally! We are dedicated to their
+destruction! But intelligence never can find out where we ought to strike with our severly limited
+firepower. If you've had a run in with them, do you have any information on them we could use?"
+`)
+	dispatch(
+		p{"\"No.\"", rejection},
+		p{"\"Why should I tell you? I *like* the Gorbluks!\"", stupid},
+		p{"\"If we can find my old ship, I could navigate you to their capitol for" +
+			"\n\t    its destruction!\"", offerHelp},
+	)
+}
+
+func diplo() {
+	fmt.Printf(`
+ "Earth? That's rather an obscure place! I seem to remember there being some Gorbluk activity
+there, eh Rigger?"
+
+ One of the aliens nods.
+
+ "Right-o, then. We have a common enemy, how 'bout we join forces, whaddaya say?"
+`)
+	dispatch(
+		p{"\"If we can find my old ship, I could navigate you to their capitol for" +
+			"\n\t    its destruction!\"", offerHelp},
+		p{"\"I will remain neutral, so no.\"", rejection},
+		p{"\"No, actually, I'm on the Gorbluk side here.\"", stupid},
+	)
+}
+
+func stupid() {
+	fmt.Printf(`
+ The Kulbrogs shoot you. You
+die.
+
+Why did you think that was a good idea?
+
+	The end.
+`)
+	playAgainPrompt()
+}
+
+func rejection() {
+	fmt.Printf(`
+ "Oh. Well. I guess we shouldn't have told you all we did. I'm sorry, but we're gonna have to kill
+you now."
+
+ You
+die.
+
+	The end.
+`)
+	playAgainPrompt()
+}
+
+func offerHelp() {
+	fmt.Printf(`
+ "Wonderful! Come with us."
+
+ They lead you off across the plain towards the hovering battleship. A ladder comes down and you
+are led up it and into the craft's living quarters. After a little while the ship begins to move.
+Out your porthole you can see the ground drop away and be replaced by stars. After several weeks of
+space travel, you finally arrive at Glock. You are brought to the bridge to guide the ship. The
+spaceship bombards the central government of all Gorbluks. His Mighty Majesty, The Lord High Dictator
+Of All Gorbluks dies. All Gorbluk activities come to a halt. The Earth is freed. The Kulbrogs invade
+and lay waste to Glock. Through your artifice, a treaty is signed between the Earth and the
+Commonweath of Kcolg. You return to Earth, a hero. Eventually, the Earth becomes a satellite state
+of the Kulbrogs. But their government isn't so bad, so long as nobody tells anyone anything they
+shouldn't.
+
+	The end.
+`)
+}
