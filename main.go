@@ -18,7 +18,7 @@ The Planet
 
 A game by Xavier
 
-Version: as yet unpublished.
+Version the First.
 
 [press enter]
 `)
